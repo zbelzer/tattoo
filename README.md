@@ -10,9 +10,9 @@ It is important to note that the Gun works both ways, you can get at the marking
 as produce a marked up version. This is why it's not a JQuery plugin.
 
 Create some "Ink" by supplying a name and a regexp. If you want it to go somewhere, give it a `:host` and `:url` as well:
-    tags = Tattoo::Ink.new(:tags, /(?:\s?#)([a-z]+)/i, :host => "example.com", :url => "/tags/:tag")
+    tags = Tattoo::Ink.new(:tags, /([a-z]+)/i, :host => "example.com", :url => "/tags/:id")
 
-Create a gun and load up some ink:
+Create a gun and load up some Ink:
     gun = Tattoo::Gun.new("Some #sweet tags", [tags])
 
 The gun can either produce a 'tattoo' for you:
@@ -20,6 +20,9 @@ The gun can either produce a 'tattoo' for you:
 
 Or you can look at what you would have written:
     gun.look => {:tags => ["sweet"]}
+
+To specify a different prefix or token, supply them to the Ink (defaults to '#' and 'id' respectively):
+    Tattoo::Ink.new(:users, /([a-z]+)/i, :host => "example.com", :url => "/users/:user", :token => "user", :prefix => "@")
 
 The latter is useful in parsing things like tweets and saving the tags or whatnot to the database.
 
