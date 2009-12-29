@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "tattoo"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Tattoo: Ink some mad links on everyday text}
+    gem.description = %Q{Tattoo is a (very) simple tool to decorate text as links based off of regular expressions and url templates.}
     gem.email = "zbelzer@gmail.com"
     gem.homepage = "http://github.com/zbelzer/tattoo"
     gem.authors = ["zbelzer"]
