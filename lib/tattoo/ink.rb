@@ -32,8 +32,8 @@ module Tattoo
     end
 
     def link_tag_for(tag)
-      attributes = @attributes.map {|k, v| " #{k}=\"#{v}\""}
-      %{<a href="#{url_for(tag)}"#{attributes}>#{@prefix}#{tag}</a>}
+      attributes = @attributes.map {|k, v| "#{k}=\"#{v}\""}.join(' ')
+      %{<a href="#{url_for(tag)}" #{attributes}>#{@prefix}#{tag}</a>}
     end
 
     def url_for(tag)
